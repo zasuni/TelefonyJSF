@@ -1,0 +1,39 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+
+<h:head>
+	<h:outputStylesheet library="css" name="telefony.css" />
+</h:head>
+
+<h:body>
+	<h:panelGroup id="page" layout="block">
+
+		<h:panelGroup id="header" layout="block">
+			<ui:insert name="header">
+				<ui:include src="header.html" />
+			</ui:insert>
+		</h:panelGroup>
+
+		<h:panelGroup id="menu" layout="block">
+			<ui:insert name="menu">
+				<ui:include src="menu.html" />
+			</ui:insert>
+		</h:panelGroup>
+
+		<h:panelGroup id="content" layout="block">
+				<ui:insert name="content"></ui:insert>
+		</h:panelGroup>
+
+		<h:panelGroup id="footer" layout="block">
+			<ui:insert name="footer">
+				<ui:insert name="footer">Telefony by Grzesiek, Copyright (c) 2014</ui:insert>
+			</ui:insert>
+		</h:panelGroup>
+
+	</h:panelGroup>
+</h:body>
+</html>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	template="templates/pattern.html">
+
+	<ui:define name="content">
+		<h:form>
+			<h:panelGrid columns="2">
+
+				<h:outputText value="Marka / Typ:" />
+				<h:inputText id="nazwaInputId" value="#{telefonBean.telefon.nazwa}" required="true"
+					requiredMessage="Pole Marka / Typ jest wymagane !!!" />
+
+
+				<h:outputText value="Opis:" />
+				<h:inputText value="#{telefonBean.telefon.opis}" />
+
+			</h:panelGrid>
+
+			<h:panelGrid>
+				<h:commandButton value="Zapisz" action="#{telefonBean.addTelefon}" />
+			</h:panelGrid>
+
+			<h:panelGrid>
+				<h:messages for="" />
+				<h:messages id="messages" style="color:red" showDetail="#{true}"
+					showSummary="#{false}" />
+			</h:panelGrid>
+
+
+		</h:form>
+	</ui:define>
+</ui:composition>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	template="templates/pattern.html">
+	<ui:define name="content">
+		<h:form>
+			<h:dataTable value="#{telefonBean.allTelefony}" var="tel"
+				styleClass="telefon-table" headerClass="telefon-table-header"
+				rowClasses="telefon-table-odd-row,telefon-table-even-row">
+
+				<h:column>
+					<!-- column header -->
+					<f:facet name="header">Lp.</f:facet>
+					<!-- row record -->
+    				#{tel.id}
+    			</h:column>
+
+				<h:column>
+					<f:facet name="header">Marka / Typ</f:facet>
+    				#{tel.nazwa}
+    			</h:column>
+
+				<h:column>
+					<f:facet name="header">Opis</f:facet>
+    				#{tel.opis}
+    			</h:column>
+
+				<h:column>
+					<f:facet name="header">Akcja</f:facet>
+					<h:commandLink value="Usuń" action="#{telefonBean.usunTelefon}" />
+				</h:column>
+
+			</h:dataTable>
+		</h:form>
+	</ui:define>
+</ui:composition>
+
